@@ -4,21 +4,44 @@ public class index {
 
     public static void main(String[] args){
 
-        calculadora();
+        Scanner sc = new Scanner(System.in);
+                int opcao;
 
+        do{
+            System.out.println("\n-----Menu da Calculadora-----");
+            System.out.println("1 - Continuar");
+            System.out.println("2 - Sair");
+            System.out.println("Escolha uma Opção:");
+
+            opcao = sc.nextInt();
+
+            if (opcao == 1){
+                calculadora();
+            }else if (opcao == 2){
+                break;
+            }else{
+                System.out.println("Opção Invalida, Tente novamente.");
+            }
+        }while (opcao != 2);
+
+        System.out.println("Obrigado por usar.");
     }
     public static void calculadora() {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("CALCULADORA");
+        System.out.println("\nCALCULADORA\n");
 
-        System.out.println("Selecione a Operação");
+        System.out.println("Selecione a Operação\n");
 
         int operacao;
         do {
             System.out.println("1 = Soma = +\n2 = Subtração = -\n3 = Multiplicação = *\n4 = Divisão = /");
             operacao = sc.nextInt();
+
+            if(operacao < 1 || operacao > 4){
+                System.out.println("Opção Invalida, Tente novamente.");
+            }
         } while (operacao < 1 || operacao > 4);
 
         System.out.println("Primeiro numero");
