@@ -7,7 +7,7 @@ public class index {
         calculadora();
 
     }
-    public static void calculadora(){
+    public static void calculadora() {
 
         Scanner sc = new Scanner(System.in);
 
@@ -15,14 +15,11 @@ public class index {
 
         System.out.println("Selecione a Operação");
 
-        System.out.println("1 = Soma = +\n2 = Subtração = -\n3 = Multiplicação = *\n4 = Divisão = /");
-
-        double operacao = sc.nextDouble();
-
-        if (operacao < 1 || operacao > 4){
-            System.out.println("Operação invalida, tente novamente");
-            return;
-        }
+        int operacao;
+        do {
+            System.out.println("1 = Soma = +\n2 = Subtração = -\n3 = Multiplicação = *\n4 = Divisão = /");
+            operacao = sc.nextInt();
+        } while (operacao < 1 || operacao > 4);
 
         System.out.println("Primeiro numero");
 
@@ -42,25 +39,19 @@ public class index {
 
             System.out.printf("Resultado: %.2f + %.2f = %.2f%n", n1, n2, resultado);
 
-        }
-
-        else if (operacao == 2) {
+        } else if (operacao == 2) {
 
             double resultado = n1 - n2;
 
             System.out.printf("Resultado: %.2f - %.2f = %.2f%n", n1, n2, resultado);
 
-        }
-
-        else if (operacao == 3) {
+        } else if (operacao == 3) {
 
             double resultado = n1 * n2;
 
             System.out.printf("Resultado: %.2f * %.2f = %.2f%n", n1, n2, resultado);
 
-        }
-
-        else if (operacao == 4) {
+        } else if (operacao == 4) {
 
             if (n2 == 0) {
 
@@ -74,9 +65,7 @@ public class index {
 
             }
 
-        }
-
-        else {
+        } else {
 
             System.out.println("Operação Inválida, Tente novamente");
 
